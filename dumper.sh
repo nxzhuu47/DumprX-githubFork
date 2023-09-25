@@ -977,7 +977,7 @@ if [[ "$PUSH_TO_GITLAB" = true ]]; then
 	repo=$(printf "${brand}" | tr '[:upper:]' '[:lower:]' && echo -e "/${codename}")
 else
 	rm -rf .gitlab_token
-	repo=$(echo "${brand}"_"${codename}"_dump | tr '[:upper:]' '[:lower:]')
+	repo=$(echo "${brand}"_"${codename}"_dump-DumprX | tr '[:upper:]' '[:lower:]')
 fi
 
 platform=$(echo "${platform}" | tr '[:upper:]' '[:lower:]' | tr -dc '[:print:]' | tr '_' '-' | cut -c 1-35)
@@ -1105,8 +1105,8 @@ rm -rf "${TMPDIR}" 2>/dev/null
 
 if [[ -s "${PROJECT_DIR}"/.github_token ]]; then
 	GITHUB_TOKEN=$(< "${PROJECT_DIR}"/.github_token)	# Write Your Github Token In a Text File
-	[[ -z "$(git config --get user.email)" ]] && git config user.email "guptasushrut@gmail.com"
-	[[ -z "$(git config --get user.name)" ]] && git config user.name "Sushrut1101"
+	[[ -z "$(git config --get user.email)" ]] && git config user.email "nxzhuuu47@gmail.com"
+	[[ -z "$(git config --get user.name)" ]] && git config user.name "nxzhuu47"
 	if [[ -s "${PROJECT_DIR}"/.github_orgname ]]; then
 		GIT_ORG=$(< "${PROJECT_DIR}"/.github_orgname)	# Set Your Github Organization Name
 	else
@@ -1169,7 +1169,7 @@ if [[ -s "${PROJECT_DIR}"/.github_token ]]; then
 		if [[ -s "${PROJECT_DIR}"/.tg_chat ]]; then		# TG Channel ID
 			CHAT_ID=$(< "${PROJECT_DIR}"/.tg_chat)
 		else
-			CHAT_ID="@DumprXDumps"
+			CHAT_ID="@@nxzprjctcmn47_ch"
 		fi
 		printf "Sending telegram notification...\n"
 		printf "<b>Brand: %s</b>" "${brand}" >| "${OUTDIR}"/tg.html
@@ -1216,8 +1216,8 @@ elif [[ -s "${PROJECT_DIR}"/.gitlab_token ]]; then
 	git checkout -b "${branch}" || { git checkout -b "${incremental}" && export branch="${incremental}"; }
 	find . \( -name "*sensetime*" -o -name "*.lic" \) | cut -d'/' -f'2-' >| .gitignore
 	[[ ! -s .gitignore ]] && rm .gitignore
-	[[ -z "$(git config --get user.email)" ]] && git config user.email "guptasushrut@gmail.com"
-	[[ -z "$(git config --get user.name)" ]] && git config user.name "Sushrut1101"
+	[[ -z "$(git config --get user.email)" ]] && git config user.email "nxzhuuu47@gmail.com"
+	[[ -z "$(git config --get user.name)" ]] && git config user.name "nxzhuu47"
 
 	# Create Subgroup
 	GRP_ID=$(curl -s --request GET --header "PRIVATE-TOKEN: ${GITLAB_TOKEN}" "${GITLAB_HOST}/api/v4/groups/${GIT_ORG}" | jq -r '.id')
@@ -1308,7 +1308,7 @@ elif [[ -s "${PROJECT_DIR}"/.gitlab_token ]]; then
 		if [[ -s "${PROJECT_DIR}"/.tg_chat ]]; then		# TG Channel ID
 			CHAT_ID=$(< "${PROJECT_DIR}"/.tg_chat)
 		else
-			CHAT_ID="@DumprXDumps"
+			CHAT_ID="@nxzprjctcmn47_ch"
 		fi
 		printf "Sending telegram notification...\n"
 		printf "<b>Brand: %s</b>" "${brand}" >| "${OUTDIR}"/tg.html
